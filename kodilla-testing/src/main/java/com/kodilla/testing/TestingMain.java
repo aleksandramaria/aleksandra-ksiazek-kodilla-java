@@ -10,7 +10,7 @@ public class TestingMain {
         int resultOfSubtracting = calculator.subtractAFromB(8, 2);
 
         if (resultOfAdding == 10) {
-            System.out.println("adding methos works");
+            System.out.println("adding method works");
         } else {
             System.out.println("boo :(");
         }
