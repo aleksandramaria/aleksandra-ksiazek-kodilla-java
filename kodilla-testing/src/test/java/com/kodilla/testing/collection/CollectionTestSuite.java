@@ -1,7 +1,11 @@
 package com.kodilla.testing.collection;
-import org.junit.*;
-import java.util.*;
-import com.kodilla.testing.collection.OddNumbersExterminator;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ola on 17/07/2017.
@@ -19,26 +23,30 @@ public class CollectionTestSuite {
 
     @Test
     public void testOddNumbersExterminatorEmptyList () {
+        //GIVEN
         ArrayList<Integer> numbers = new ArrayList<Integer>();
-
-        numbers.add(null);
-
+        //WHEN
         OddNumbersExterminator listOne = new OddNumbersExterminator();
-        int result1 = listOne.exterminate(numbers);
-        Assert.assertEquals(null, result1);
+        List<Integer> result = listOne.exterminate(numbers);
+        //THEN
+        final ArrayList<Integer> expectedResult = new ArrayList<>();
+        Assert.assertEquals(expectedResult, result);
     }
 
 
     @Test
     public void testOddNumbersExterminatorNormalList() {
+        //GIVEN
         ArrayList<Integer> numbers = new ArrayList<Integer>();
-
         numbers.add(1);
         numbers.add(2);
-
+        //WHEN
         OddNumbersExterminator listOne = new OddNumbersExterminator();
-        int result2 = listOne.exterminate(numbers);
-        Assert.assertEquals(2, result2);
+        List<Integer> result = listOne.exterminate(numbers);
+        //THEN
+        final ArrayList<Integer> expectedResult = new ArrayList<>();
+        expectedResult.add(2);
+        Assert.assertEquals(expectedResult, result);
     }
 }
 
