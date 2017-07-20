@@ -1,11 +1,10 @@
-package com.kodilla.testing.com.kodilla.testing.shape;
+package com.kodilla.testing.shape;
 
+import com.kodilla.testing.com.kodilla.testing.shape.Circle;
+import com.kodilla.testing.com.kodilla.testing.shape.Shape;
 import org.junit.*;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by ola on 19/07/2017.
@@ -32,7 +31,6 @@ public class ShapeCollectorTestSuiteTest {
     public void testAddFigure() {
         //Given
         ArrayList<Shape> figures = new ArrayList<>();
-        figures.add(new Circle());
 
         //When
         figures.add(new Circle());

@@ -1,4 +1,4 @@
-package com.kodilla.com.kodilla.testing.forum.statistics;
+package com.kodilla.testing.forum.statistics;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ public class ForumStatistics {
         return commentsCount;
     }
 
-    public getStatistics() {
+    public Statistics getStatistics() {
         return statistics;
     }
     int avePostsPerUser(){
@@ -41,6 +41,6 @@ public class ForumStatistics {
     }
 
     public int calculateAdvStatistics(Statistics statistics) {
-        return ...;
+        return 0;
     }
 }
