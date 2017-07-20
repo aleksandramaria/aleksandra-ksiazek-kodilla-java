@@ -1,4 +1,4 @@
-package com.kodilla.testing.com.kodilla.testing.shape;
+package com.kodilla.testing.shape;
 
 /**
  * Created by ola on 19/07/2017.

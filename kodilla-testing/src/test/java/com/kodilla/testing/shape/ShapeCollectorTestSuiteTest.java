@@ -1,7 +1,7 @@
 package com.kodilla.testing.shape;
 
-import com.kodilla.testing.com.kodilla.testing.shape.Circle;
-import com.kodilla.testing.com.kodilla.testing.shape.Shape;
+import com.kodilla.testing.com.shape.Circle;
+import com.kodilla.testing.com.shape.Shape;
 import org.junit.*;
 
 import java.util.ArrayList;
