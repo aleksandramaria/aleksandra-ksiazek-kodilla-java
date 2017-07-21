@@ -8,39 +8,31 @@ import java.util.List;
  */
 public class ForumStatistics {
     Statistics statistics;
-    private List<String> usersNames = new ArrayList<String>();
-    private int postsCount;
-    private int commentsCount;
 
-    public ForumStatistics(Statistics statistics, int postsCount, int commentsCount) {
+    public ForumStatistics(Statistics statistics) {
         this.statistics = statistics;
-        this.postsCount = postsCount;
-        this.commentsCount = commentsCount;
     }
 
     public int getPostsCount() {
-        return postsCount;
+        return this.statistics.postsCount();
     }
 
     public int getCommentsCount() {
-        return commentsCount;
+        return this.statistics.commentsCount();
     }
 
     public Statistics getStatistics() {
         return statistics;
     }
     int avePostsPerUser(){
-        return this.postsCount / usersNames.size();
+        return this.statistics.commentsCount() / this.statistics.usersNames().size();
     }
 
     int aveCommentsPerUser(){
-        return this.commentsCount / usersNames.size();
+        return this.statistics.commentsCount() / this.statistics.usersNames().size();
     }
     int aveCommentsPerPost(){
-        return this.commentsCount / this.postsCount;
+        return this.statistics.commentsCount()/ this.statistics.postsCount();
     }
 
-    public int calculateAdvStatistics(Statistics statistics) {
-        return 0;
-    }
 }
