@@ -6,3 +6,4 @@ public class PoemBeautifier {
         return poemDecorator.decorate(str);
     }
 }
+
