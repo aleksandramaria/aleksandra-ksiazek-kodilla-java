@@ -31,10 +31,10 @@ public class ForumStatisticsTestSuite {
 
             when(statisticsMock.usersNames().size()).thenReturn(users.size());
 
-            ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
+           /* ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
 
             //When
-        /* int quantityOfUsers = forumStatistics.usersNames().size();
+         int quantityOfUsers = forumStatistics.usersNames().size();
 
         //Then
         Assert.assertEquals(1000, quantityOfUsers);*/
