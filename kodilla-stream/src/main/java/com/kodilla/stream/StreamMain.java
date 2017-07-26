@@ -22,5 +22,6 @@ public class StreamMain {
 //        theMapOfUsers.entrySet().stream()
 //                .map(entry -> entry.getKey() + ": " + entry.getValue())
 //                .forEach(System.out::println);
+
     }
 }

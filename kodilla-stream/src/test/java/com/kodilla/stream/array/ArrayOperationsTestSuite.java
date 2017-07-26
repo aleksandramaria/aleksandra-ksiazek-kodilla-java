@@ -3,16 +3,14 @@ package com.kodilla.stream.array;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.stream.IntStream;
-
 /**
  * Created by ola on 25/07/2017.
  */
 public class ArrayOperationsTestSuite {
     @Test
-    //Given
     public void testGetAverage() {
+
+        //Given
         int[] numbers = new int[20];
         numbers[0] = 2;
         numbers[1] = 6;
@@ -34,12 +32,13 @@ public class ArrayOperationsTestSuite {
         numbers[17] = 43;
         numbers[18] = 34;
         numbers[19] = 60;
+
+        //When
+        double average = ArrayOperations.getAverage(numbers);
+
+        //Then
+        Assert.assertEquals(17.95, average, 0);
+
     }
-    //When
-    ArrayOperations.
-
-
-    //Then
-    Assert.assertEquals(17.95, numbers.getAverage(), 0);
 }
 
