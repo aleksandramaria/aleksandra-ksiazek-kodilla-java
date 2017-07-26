@@ -2,6 +2,8 @@ package com.kodilla.testing.forum.statistics;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -16,29 +18,29 @@ public class ForumStatisticsTestSuite {
     public void testAvePostsPerUser() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        List<String> users = new List<>();
-        Random theGenerator = new Random();
+        List<String> users = new ArrayList<>();
+        final int NUMBER_OF_POSTS = 5;
+        final int NUMBER_OF_COMMENTS = 8;
+
         for (int n = 0; n < 1000; n++) {
-            int numberOfStr = theGenerator.nextInt(10);
-
-            StringBuilder word = new StringBuilder();
-
-            for (int j = 0; j < numberOfStr; j++) {
-                word.append("bla");
-            }
-
-            users.add(word.toString());
+            users.add("User_" + n);
+        }
 
             when(statisticsMock.usersNames().size()).thenReturn(users.size());
+            when(statisticsMock.postsCount()).thenReturn(NUMBER_OF_POSTS);
+            when(statisticsMock.commentsCount()).thenReturn(NUMBER_OF_COMMENTS);
 
-           /* ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
 
-            //When
-         int quantityOfUsers = forumStatistics.usersNames().size();
+        //when
+            ForumStatistics forumStatistics = new ForumStatistics();
+            forumStatistics.calculateAdvStatistics(statisticsMock);
+
+
+        int quantityOfUsers = forumStatistics.getUsersCount();
 
         //Then
-        Assert.assertEquals(1000, quantityOfUsers);*/
-        }
+        Assert.assertEquals(1000, quantityOfUsers);
+
     }
 }
 
