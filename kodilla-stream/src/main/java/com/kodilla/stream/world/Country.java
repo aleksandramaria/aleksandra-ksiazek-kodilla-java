@@ -12,8 +12,7 @@ public final class Country {
         this.peopleQuantity = peopleQuantity;
     }
     public BigDecimal getPeopleQuantity() {
-        BigDecimal peopleQuantity = new BigDecimal("");
-        return peopleQuantity;
+        return this.peopleQuantity;
     }
     @Override
     public String toString() {
