@@ -48,7 +48,7 @@ public class WorldTestSuite {
     world.addContinent(africa);
 
     //When
-        BigDecimal expectedResult = new BigDecimal("9000000009");
+    BigDecimal expectedResult = new BigDecimal("9000000009");
 
     //Then
     Assert.assertEquals(expectedResult, world.getPeopleQuantity());

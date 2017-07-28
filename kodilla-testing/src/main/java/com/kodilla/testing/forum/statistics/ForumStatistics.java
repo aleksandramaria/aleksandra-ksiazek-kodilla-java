@@ -12,10 +12,6 @@ public class ForumStatistics {
     private double averageCommentsPerPost;
     private double averageCommentsPerUser;
 
-
-    public ForumStatistics() {
-    }
-
     public void calculateAdvStatistics(Statistics statistics) {
         this.postCount = statistics.postsCount();
         this.commentsCount = statistics.commentsCount();

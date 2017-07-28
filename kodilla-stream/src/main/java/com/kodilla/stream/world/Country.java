@@ -12,12 +12,6 @@ public final class Country {
         this.peopleQuantity = peopleQuantity;
     }
     public BigDecimal getPeopleQuantity() {
-        return this.peopleQuantity;
-    }
-    @Override
-    public String toString() {
-        return "Country{" +
-                ", peopleQuantity=" + peopleQuantity +
-                '}';
+        return peopleQuantity;
     }
 }
