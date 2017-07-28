@@ -23,7 +23,11 @@ public class ForumStatistics {
             this.averagePostsPerUser = this.postCount/this.usersCount;
         }
         this.averageCommentsPerPost = this.commentsCount/this.postCount;
-        this.averageCommentsPerUser = this.commentsCount/this.usersCount;
+        if(this.usersCount == 0) {
+            this.averageCommentsPerUser = 0;
+        } else {
+            this.averageCommentsPerUser = this.commentsCount / this.usersCount;
+        }
     }
 
     public int getPostCount() {
