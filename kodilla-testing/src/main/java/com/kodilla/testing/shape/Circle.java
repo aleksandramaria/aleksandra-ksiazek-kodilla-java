@@ -1,15 +1,21 @@
 package com.kodilla.testing.shape;
 
-/**
- * Created by ola on 19/07/2017.
- */
+
 public class Circle implements Shape {
-    public String getShapeName() {
-        return "circle";
+    private String name;
+    private int r;
+
+    public Circle(String name, int r) {
+        this.name = name;
+        this.r = r;
     }
 
-    public int getField() {
-        return 22;
+    public String getShapeName() {
+        return this.name;
+    }
+
+    public double getField() {
+        return Math.PI * this.r * this.r;
     }
 }
 
