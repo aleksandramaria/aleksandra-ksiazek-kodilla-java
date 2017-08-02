@@ -5,15 +5,18 @@ import java.util.Map;
 
 
 public class FlightConnection {
-    public Map<String, Boolean> findFlight(Flight flight) throws RouteNotFoundException {
+    public Boolean findFlight(Flight flight) throws RouteNotFoundException {
         HashMap<String, Boolean> possibleConnections = new HashMap<>();
         possibleConnections.put("san Francisco", true);
         possibleConnections.put("chicago", false);
 
-        for(Map.Entry<String, Boolean> entry : possibleConnections.entrySet()) {
-            if (entry.getValue() == false) {
-                throw new RouteNotFoundException("entry value false."); }
-        } return possibleConnections;
+        Boolean isPossible = possibleConnections.get(flight.getDepartureAirport());
+
+        if(isPossible == null) {
+            throw new RouteNotFoundException("Not found");
+        }
+
+        return isPossible;
     }
 }
 
