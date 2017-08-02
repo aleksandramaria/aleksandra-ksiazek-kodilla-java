@@ -2,7 +2,7 @@ package com.kodilla.exception.main;
 
 import com.kodilla.exception.io.FileReader;
 import com.kodilla.exception.io.FileReaderException;
-import com.kodilla.exception.io.FileReaderWithoutHandling;
+//import com.kodilla.exception.io.FileReaderWithoutHandling;
 
 /**
  * Created by ola on 28/07/2017.
