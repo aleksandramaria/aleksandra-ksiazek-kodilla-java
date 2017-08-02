@@ -7,7 +7,7 @@ import java.util.Map;
 public class FlightExceptionRunner {
     public static void main(String[] args) {
         Flight chicago = new Flight("chicago");
-        Flight sanFrancisco = new Flight("san Francisco");
+        Flight sanFrancisco = new Flight("san francisco");
 
         FlightConnection flightConnection = new FlightConnection();
 
