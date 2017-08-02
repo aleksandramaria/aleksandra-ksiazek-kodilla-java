@@ -54,6 +54,7 @@ public class ShapeCollectorTestSuiteTest {
 
         //Then
         Assert.assertTrue(true);
+        Assert.assertEquals(1, shapeCollector.showFigures().size());
     }
 
     @Test
@@ -73,5 +74,18 @@ public class ShapeCollectorTestSuiteTest {
 
     @Test
     public void testShowFigures() {
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
+        Circle circle = new Circle("circle", 4);
+        Square square = new Square("square", 3);
+
+        shapeCollector.addFigure(circle);
+        shapeCollector.addFigure(square);
+
+        //When
+        List<Shape> shapes = shapeCollector.showFigures();
+
+        //Then
+        Assert.assertEquals(2, shapes.size());
     }
 }
