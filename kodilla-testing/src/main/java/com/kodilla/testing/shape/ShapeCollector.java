@@ -21,7 +21,7 @@ public class ShapeCollector {
     public String showFigures(){
         String result = "";
         for(Shape shape : figures) {
-            result = shape.toString();
+            result = result + shape.toString();
         }
         return result;
     }
