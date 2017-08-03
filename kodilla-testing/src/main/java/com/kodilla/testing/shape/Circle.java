@@ -17,5 +17,10 @@ public class Circle implements Shape {
     public double getField() {
         return Math.PI * this.r * this.r;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
 

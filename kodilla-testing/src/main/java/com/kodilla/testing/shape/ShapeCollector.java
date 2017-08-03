@@ -18,7 +18,11 @@ public class ShapeCollector {
     public Shape getFigure(int n){
        return figures.get(n);
     }
-    public List<Shape> showFigures(){
-        return figures;
+    public String showFigures(){
+        String result = "";
+        for(Shape shape : figures) {
+            result = shape.toString();
+        }
+        return result;
     }
 }
