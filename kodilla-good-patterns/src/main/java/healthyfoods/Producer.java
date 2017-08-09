@@ -2,5 +2,5 @@ package healthyfoods;
 
 
 public interface Producer {
-    void process();
+    void process(Product product);
 }

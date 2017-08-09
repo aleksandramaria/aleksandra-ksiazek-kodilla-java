@@ -9,7 +9,9 @@ public class OrderProcessor {
         this.producer = producer;
     }
 
-    public Producer getProducer() {
-        return producer;
+    public OrderItem process(OrderItem orderItem) {
+        producer.process(orderItem.getProduct());
+        orderItem.setSent(true);
+        return orderItem;
     }
 }

@@ -7,20 +7,12 @@ import java.util.Set;
 public final class Flight {
     private final String flightFrom;
     private final String flightTo;
-    private final Set<Flight> flightConnections = new HashSet<>();
 
     public Flight(final String flightFrom, final String flightTo) {
         this.flightFrom = flightFrom;
         this.flightTo = flightTo;
     }
 
-    public void addFlight(Flight flight) {
-        flightConnections.add(flight);
-    }
-
-    public boolean removeFlight(Flight flight) {
-        return flightConnections.remove(flight);
-    }
 
     public String getFlightFrom() {
         return flightFrom;
@@ -30,9 +22,6 @@ public final class Flight {
         return flightTo;
     }
 
-    public Set<Flight> getFlightConnections() {
-        return flightConnections;
-    }
 
     @Override
     public String toString() {
@@ -43,20 +32,18 @@ public final class Flight {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Flight)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         Flight flight = (Flight) o;
 
-        if (!getFlightFrom().equals(flight.getFlightFrom())) return false;
-        if (!getFlightTo().equals(flight.getFlightTo())) return false;
-        return getFlightConnections().equals(flight.getFlightConnections());
+        if (flightFrom != null ? !flightFrom.equals(flight.flightFrom) : flight.flightFrom != null) return false;
+        return flightTo != null ? flightTo.equals(flight.flightTo) : flight.flightTo == null;
     }
 
     @Override
     public int hashCode() {
-        int result = getFlightFrom().hashCode();
-        result = 31 * result + getFlightTo().hashCode();
-        result = 31 * result + getFlightConnections().hashCode();
+        int result = flightFrom != null ? flightFrom.hashCode() : 0;
+        result = 31 * result + (flightTo != null ? flightTo.hashCode() : 0);
         return result;
     }
 }
