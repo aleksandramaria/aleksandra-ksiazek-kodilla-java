@@ -14,6 +14,18 @@ public class PurchaseProcessor {
         this.invoiceRepository = invoiceRepository;
     }
 
+    public InformationService getInformationService() {
+        return informationService;
+    }
+
+    public PurchaseService getPurchaseService() {
+        return purchaseService;
+    }
+
+    public InvoiceRepository getInvoiceRepository() {
+        return invoiceRepository;
+    }
+
     public PurchaseDto process(final PurchaseRequest purchaseRequest) {
         boolean isPurchased = purchaseService.purchase(purchaseRequest.getUser(), purchaseRequest.getProductName(),
                 purchaseRequest.getPurchaseDate());

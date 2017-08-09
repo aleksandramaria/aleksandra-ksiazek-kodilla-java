@@ -5,7 +5,9 @@ import java.util.Map;
 
 
 public class FlightConnection {
+
     public Boolean findFlight(Flight flight) throws RouteNotFoundException {
+
         HashMap<String, Boolean> possibleConnections = new HashMap<>();
         possibleConnections.put("san francisco", true);
         possibleConnections.put("chicago", false);
@@ -19,5 +21,4 @@ public class FlightConnection {
         return isPossible;
     }
 }
-
 
