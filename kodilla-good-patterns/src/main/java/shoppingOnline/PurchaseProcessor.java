@@ -30,7 +30,6 @@ public class PurchaseProcessor {
         boolean isPurchased = purchaseService.purchase(purchaseRequest.getUser(), purchaseRequest.getProductName(),
                 purchaseRequest.getPurchaseDate());
 
-
         if(isPurchased) {
             informationService.inform(purchaseRequest.getUser());
             invoiceRepository.createInvoice(purchaseRequest.getUser(), purchaseRequest.getProductName(), purchaseRequest.getPurchaseDate());

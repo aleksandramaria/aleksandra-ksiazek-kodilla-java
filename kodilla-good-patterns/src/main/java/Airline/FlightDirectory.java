@@ -21,12 +21,6 @@ public final class FlightDirectory {
 
         flightConnections.add(new Flight("Frankfurt", "Bratislava"));
         flightConnections.add(new Flight("Milan", "Nis"));
-
-//        flightConnections.add(new Flight("Katowice", "Malaga"));
-//        flightConnections.add(new Flight("Katowice", "Dublin"));
-//        flightConnections.add(new Flight("Katowice", "Paris"));
-//        flightConnections.add(new Flight("Katowice", "Bratislava"));
-//        flightConnections.add(new Flight("Katowice", "Nis"));
     }
     public Set<Flight> getSet() {
         return new HashSet<>(flightConnections);
@@ -49,8 +43,6 @@ public final class FlightDirectory {
         flights.add(flightTo);
 
         return flights;
-
-
     }
 
     public Set<Flight> findFlightsFrom(String fromCity) {

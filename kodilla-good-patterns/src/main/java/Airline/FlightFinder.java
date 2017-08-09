@@ -15,8 +15,8 @@ public class FlightFinder {
         Set<Flight> toNis = theFlightDirectory.findFlightsTo("Nis");
         System.out.println("# possible routes: " + toNis);
 
-        Set<Flight> fromKatowiceToBublin = theFlightDirectory.findFlightFromTo("Katowice", "London", "Dublin");
-        System.out.println("# possible routes: " + fromKatowiceToBublin);
+        Set<Flight> fromKatowiceToDublin = theFlightDirectory.findFlightFromTo("Katowice", "London", "Dublin");
+        System.out.println("# possible routes: " + fromKatowiceToDublin);
 
     }
 }
