@@ -18,7 +18,8 @@ public class Application {
 
         HealthyShop healthyShop = new HealthyShop(theList);
         OrderProcessor orderProcessor = new OrderProcessor(healthyShop);
-        healthyShop.process(orderItem.getProduct());
+        orderProcessor.process(orderItem);
         System.out.println("the total of the order is " + orderItem.getValue() + " zloty");
     }
 }
+
