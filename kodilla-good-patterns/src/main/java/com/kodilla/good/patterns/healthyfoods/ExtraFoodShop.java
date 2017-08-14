@@ -1,4 +1,4 @@
-package healthyfoods;
+package com.kodilla.good.patterns.healthyfoods;
 
 
 import java.util.List;

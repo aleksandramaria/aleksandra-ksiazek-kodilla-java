@@ -1,8 +1,5 @@
-package Airline;
+package com.kodilla.good.patterns.airline;
 
-
-import java.util.HashSet;
-import java.util.Set;
 
 public final class Flight {
     private final String flightFrom;

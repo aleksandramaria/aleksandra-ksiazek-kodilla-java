@@ -1,4 +1,6 @@
-package Airline;
+package com.kodilla.good.patterns.airline;
+
+import com.kodilla.good.patterns.airline.Flight;
 
 import java.util.HashSet;
 import java.util.Set;

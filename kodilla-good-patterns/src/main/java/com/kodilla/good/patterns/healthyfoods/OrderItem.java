@@ -1,4 +1,4 @@
-package healthyfoods;
+package com.kodilla.good.patterns.healthyfoods;
 
 
 public final class OrderItem {
