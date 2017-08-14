@@ -38,11 +38,10 @@ public class ForumStatisticsTestSuite {
        double commentsPerPost = forumStatistics.getAverageCommentsPerPost();
 
        //Then
-       Assert.assertEquals(100, quantityOfUsers);
+       Assert.assertEquals(100, quantityOfUsers, 0);
        Assert.assertEquals(2, postPerUser, 0);
        Assert.assertEquals(4, commentsPerUser, 0);
        Assert.assertEquals(2, commentsPerPost, 0);
-
 
     }
 

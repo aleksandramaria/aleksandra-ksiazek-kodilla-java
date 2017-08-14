@@ -25,11 +25,11 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorEmptyList () {
         //GIVEN
         ArrayList<Integer> numbers = new ArrayList<Integer>();
-        //WHEN
         OddNumbersExterminator listOne = new OddNumbersExterminator();
+        //WHEN
         List<Integer> result = listOne.exterminate(numbers);
-        //THEN
         final ArrayList<Integer> expectedResult = new ArrayList<>();
+        //THEN
         Assert.assertEquals(expectedResult, result);
     }
 
