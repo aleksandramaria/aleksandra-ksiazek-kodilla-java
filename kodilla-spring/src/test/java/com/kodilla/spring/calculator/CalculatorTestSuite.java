@@ -19,13 +19,13 @@ public class CalculatorTestSuite {
         Calculator calculator = context.getBean(Calculator.class);
         //When
         double resultOfAdd = calculator.add(2, 4);
-//        double resultOfSub = calculator.sub(10, 5);
-//        double resultOfMul = calculator.mul(4,4);
-//        double resultOfDiv = calculator.div(24,6);
+        double resultOfSub = calculator.sub(10, 5);
+        double resultOfMul = calculator.mul(4,4);
+        double resultOfDiv = calculator.div(24,6);
         //Then
-        Assert.assertEquals(6.0, resultOfAdd);
-//        Assert.assertEquals(5.0, resultOfSub);
-//        Assert.assertEquals(16.0, resultOfMul);
-//        Assert.assertEquals(4.0, resultOfDiv);
+        Assert.assertEquals(6.0, resultOfAdd,0);
+        Assert.assertEquals(5.0, resultOfSub, 0);
+        Assert.assertEquals(16.0, resultOfMul, 0);
+        Assert.assertEquals(4.0, resultOfDiv, 0);
     }
 }
