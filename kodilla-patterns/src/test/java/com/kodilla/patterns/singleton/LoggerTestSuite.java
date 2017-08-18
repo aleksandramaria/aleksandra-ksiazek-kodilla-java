@@ -20,7 +20,7 @@ public class LoggerTestSuite {
     public void TestLog() {
         //Given
         //When
-        Logger.getInstance().log("yesterday");
+        Logger.getInstance().log("last night");
 
         //Then
     }
