@@ -1,45 +1,22 @@
 package com.kodilla.spring.portfolio;
 
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class Board {
-    public List<TaskList> taskstoDoList = new ArrayList<>();
-    public List<TaskList> inProgressList = new ArrayList<>();
-    public List<TaskList> taskList = new ArrayList<>();
+    public TaskList toDoList;
+    public TaskList inProgressList;
+    public TaskList doneList;
 
-    public Board(TaskList list) {
-        this.taskstoDoList = taskstoDoList;
+    public Board(TaskList toDoList, TaskList inProgressList, TaskList doneList) {
+        this.toDoList = toDoList;
         this.inProgressList = inProgressList;
-        this.taskList = taskList;
-    }
-
-    public List<TaskList> getTaskstoDoList() {
-        return taskstoDoList;
-    }
-
-    public List<TaskList> getInProgressList() {
-        return inProgressList;
-    }
-
-    public List<TaskList> getTaskList() {
-        return taskList;
-    }
-
-    public void taskAdd(TaskList task) {
-        taskstoDoList.add(task);
-        inProgressList.add(task);
-        taskList.add(task);
+        this.doneList = doneList;
     }
 
     @Override
     public String toString() {
-        return "Board " +
-                "taskstoDoList = " + taskstoDoList +
-                ", inProgressList = " + inProgressList +
-                ", taskList = " + taskList;
+        return "Board: " + "\n" +
+                "toDoList = " + toDoList + "\n" +
+                "inProgressList = " + inProgressList + "\n" +
+                "taskList = " + doneList;
     }
 }

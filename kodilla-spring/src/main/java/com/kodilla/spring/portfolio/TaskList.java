@@ -14,13 +14,8 @@ public class TaskList {
         tasks = new ArrayList<>();
     }
 
-    public List<String> getTasks() {
-        return tasks;
-    }
-
     @Override
     public String toString() {
-        return "TaskList" +
-                "tasks = " + tasks;
+        return "tasks = " + tasks;
     }
 }
