@@ -22,6 +22,7 @@ public class LoggerTestSuite {
         //When
         Logger.getInstance().log("last night");
 
+
         //Then
     }
     @Test
