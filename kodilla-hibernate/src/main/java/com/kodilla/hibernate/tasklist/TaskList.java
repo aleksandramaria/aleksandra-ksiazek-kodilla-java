@@ -13,7 +13,7 @@ public final class TaskList {
    private int id;
    private String listName;
    private String description;
-   public List<Task> tasks = new ArrayList<>();
+   private List<Task> tasks = new ArrayList<>();
 
    public TaskList() {
    }
