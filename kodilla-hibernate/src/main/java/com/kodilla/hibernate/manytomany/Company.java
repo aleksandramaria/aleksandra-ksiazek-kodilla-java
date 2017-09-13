@@ -1,9 +1,21 @@
 package com.kodilla.hibernate.manytomany;
 
+import com.kodilla.hibernate.task.Task;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+
+@NamedNativeQuery(
+        name = "Company.retrieveCompanyName",
+        query = "SELECT * FROM COMPANY WHERE NAME LIKE 'DAT%'",
+        resultClass = Company.class
+)
+
+// SELECT * FROM COMPANY WHERE NAME = 'DAT'
+// "SELECT * FROM COMPANY WHERE NAME LIKE \"% DAT %\";",
+// SELECT * FROM COMPANY WHERE NAME LIKE 'DAT%'
 
 @Entity
 @Table(name = "COMPANIES")

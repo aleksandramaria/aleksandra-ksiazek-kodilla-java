@@ -4,6 +4,7 @@ import com.kodilla.hibernate.task.Task;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -12,7 +13,7 @@ import java.util.List;
 public class Invoice {
     private int id;
     private String number;
-    private List<Item> items;
+    private List<Item> items = new ArrayList<>();
 
     public Invoice() {
     }
@@ -44,7 +45,7 @@ public class Invoice {
     }
 
     @OneToMany(
-            targetEntity = Invoice.class,
+            targetEntity = Item.class,
             mappedBy = "invoice",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
