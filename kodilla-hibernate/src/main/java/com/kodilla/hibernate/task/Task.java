@@ -9,15 +9,15 @@ import java.util.Date;
 @NamedQueries ({
         @NamedQuery(
                 name = "Task.retrieveLongTasks",
-                query = "FROM task WHERE duration > 10"
+                query = "FROM Task WHERE duration > 10"
         ),
         @NamedQuery(
                 name = "Task.retrieveShortTasks",
-                query = "FROM task WHERE duration >= 10"
+                query = "FROM Task WHERE duration >= 10"
         ),
         @NamedQuery(
                 name = "Task.retrieveTasksWithDurationLongerThan",
-                query = "FROM task WHERE duration > :DURATION"
+                query = "FROM Task WHERE duration > :DURATION"
         )
 })
 

@@ -13,9 +13,9 @@ import java.util.List;
         resultClass = Company.class
 )
 
-// SELECT * FROM COMPANY WHERE NAME = 'DAT'
+// "SELECT * FROM COMPANY WHERE NAME = 'DAT'"
 // "SELECT * FROM COMPANY WHERE NAME LIKE \"% DAT %\";",
-// SELECT * FROM COMPANY WHERE NAME LIKE 'DAT%'
+// "SELECT * FROM COMPANY WHERE NAME LIKE 'DAT%'"
 
 @Entity
 @Table(name = "COMPANIES")
