@@ -31,7 +31,7 @@ public class Calculator {
     }
 
     public BigDecimal factorial(BigDecimal n) {
-        if(n.compareTo(BigDecimal.ONE) > 0 ) {
+        if(n.compareTo(BigDecimal.ONE) > 0) {
             return n.multiply(factorial(n.subtract(BigDecimal.ONE)));
         } else if (n.equals(BigDecimal.ONE) || n.equals(BigDecimal.ZERO)) {
             return BigDecimal.ONE;
