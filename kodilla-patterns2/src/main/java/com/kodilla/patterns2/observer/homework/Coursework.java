@@ -18,7 +18,7 @@ public class Coursework implements Observable {
     }
 
     public void addAssignment(String assignment) {
-        assignments.add(assignment);
+        assignments.offer(assignment);
         notifyObservers();
     }
 
