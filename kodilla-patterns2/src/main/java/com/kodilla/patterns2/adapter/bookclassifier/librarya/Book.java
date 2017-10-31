@@ -1,9 +1,8 @@
-package com.kodilla.patterns2.adapter.bookclasifier.librarya;
+package com.kodilla.patterns2.adapter.bookclassifier.librarya;
 
 /**
  * Created by ola on 26/10/2017.
  */
-
 
 public class Book {
     private final String author;

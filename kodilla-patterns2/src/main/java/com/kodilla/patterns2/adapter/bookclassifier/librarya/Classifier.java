@@ -1,6 +1,5 @@
-package com.kodilla.patterns2.adapter.bookclasifier.librarya;
+package com.kodilla.patterns2.adapter.bookclassifier.librarya;
 
-import javax.xml.ws.Service;
 import java.util.Set;
 
 /**
