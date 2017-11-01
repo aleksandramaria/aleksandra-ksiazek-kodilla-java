@@ -4,6 +4,9 @@ import com.kodilla.patterns2.facade.api.ItemDto;
 import com.kodilla.patterns2.facade.api.OrderDto;
 import com.kodilla.patterns2.facade.api.OrderFacade;
 import com.kodilla.patterns2.facade.api.OrderProcessingException;
+import com.kodilla.patterns2.facade.employees.Company;
+import com.kodilla.patterns2.facade.employees.EmployeeFacade;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.logging.ErrorManager;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -20,6 +25,9 @@ public class FacadeTestSuite {
 
     @Autowired
     private OrderFacade orderFacade;
+
+    @Autowired
+    private EmployeeFacade employeeFacade;
 
     @Test
     public void testShopServiceSubmitOrder() {
@@ -77,5 +85,10 @@ public class FacadeTestSuite {
         } catch (OrderProcessingException e) {
             //business exception should be handled in real applications
         }
+    }
+    @Test
+    public void testEmployeeFacade() {
+        List<Company> achiCompanies = employeeFacade.getForName("achi");
+        Assert.assertEquals(3, achiCompanies.size());
     }
 }

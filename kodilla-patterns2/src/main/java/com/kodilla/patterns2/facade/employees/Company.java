@@ -1,6 +1,4 @@
-package com.kodilla.hibernate.manytomany;
-
-import com.kodilla.hibernate.task.Task;
+package com.kodilla.patterns2.facade.employees;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -13,14 +11,14 @@ import java.util.List;
 //        resultClass = Company.class
 //)
 
-@NamedQueries ({
+@NamedQueries({
         @NamedQuery(
                 name = "Company.retrieveCompanyName",
-                query = "FROM Company WHERE NAME LIKE 'DAT%'"
+                query = "FROM Company WHERE COMPANY_NAME LIKE 'DAT%'"
         ),
         @NamedQuery(
                 name = "Company.getForFragmentName",
-                query = "FROM Company WHERE NAME LIKE '%:ARG%'"
+                query = "FROM Company WHERE COMPANY_NAME LIKE :ARG"
         )
 })
 // "SELECT * FROM COMPANY WHERE NAME = 'DAT'"
