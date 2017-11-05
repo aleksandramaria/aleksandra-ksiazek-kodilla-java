@@ -14,7 +14,7 @@ public class EmployeeFacadeTestSuite {
     private EmployeeFacade employeeFacade;
 
     @Test
-    public void testCompanyName() {
+    public void testCompanyName() throws NameFindProcessingException {
         Company softwareMachine = new Company("Software Machine");
         Company dataMaesters = new Company("Data Maesters");
         Company greyMatter = new Company("Grey Matter");
@@ -23,10 +23,13 @@ public class EmployeeFacadeTestSuite {
         } catch (NameFindProcessingException e) {
             //handling a problem
         }
+        //Then
+        List<Company> achiCompanies = employeeFacade.getForName("achi");
+        Assert.assertEquals(1, achiCompanies.size());
     }
 
     @Test
-    public void testEmployeeNmae() throws NameFindProcessingException {
+    public void testEmployeeName() throws NameFindProcessingException {
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
@@ -35,11 +38,8 @@ public class EmployeeFacadeTestSuite {
         } catch (NameFindProcessingException e) {
             //
         }
+        //Then
+        List<Employee> linEmployees = employeeFacade.getForFirstName("lin");
+        Assert.assertEquals(1, linEmployees.size());
     }
 }
-
-//        //Then
-//        List<Company> achiCompanies = employeeFacade.getForFirstName("achi");
-//        Assert.assertEquals(1, achiCompanies.size());
-//    }
-//}

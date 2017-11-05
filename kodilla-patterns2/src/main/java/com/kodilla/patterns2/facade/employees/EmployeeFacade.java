@@ -15,7 +15,6 @@ import java.util.List;
 public class EmployeeFacade {
     @Autowired
     private CompanyDao companyDao;
-
     @Autowired
     private EmployeeDao employeeDao;
 
@@ -33,7 +32,7 @@ public class EmployeeFacade {
         if (employeeDao.getForFragmentName(name).size() == 0) {
             throw new NameFindProcessingException(NameFindProcessingException.ERR_NOPERSON_ERROR);
         }
-        LOGGER.info("company found");
+        LOGGER.info("employee found");
         return employeeDao.getForFragmentName("%" + name + "%");
     }
 }
