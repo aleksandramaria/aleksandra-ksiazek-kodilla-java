@@ -14,7 +14,7 @@ public class EmployeeFacadeTestSuite {
     private EmployeeFacade employeeFacade;
 
     @Test
-    public void testEmployeeFacade() {
+    public void testCompanyName() {
         Company softwareMachine = new Company("Software Machine");
         Company dataMaesters = new Company("Data Maesters");
         Company greyMatter = new Company("Grey Matter");
@@ -26,7 +26,7 @@ public class EmployeeFacadeTestSuite {
     }
 
     @Test
-    public void testEmployee() throws NameFindProcessingException {
+    public void testEmployeeNmae() throws NameFindProcessingException {
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
