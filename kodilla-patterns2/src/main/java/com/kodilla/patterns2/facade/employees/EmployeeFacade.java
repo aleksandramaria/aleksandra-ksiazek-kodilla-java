@@ -21,18 +21,26 @@ public class EmployeeFacade {
     private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeFacade.class);
 
     public List<Company> getForName(String name) throws NameFindProcessingException {
-        if (companyDao.getForFragmentName(name).size() == 0) {
-            throw new NameFindProcessingException(NameFindProcessingException.ERR_NOCOMPANY_ERROR);
+        if (companyDao.getForFragmentName(name).size() != 0) {
+            LOGGER.info("company found");
+            return companyDao.getForFragmentName("%" + name + "%");
         }
-        LOGGER.info("company found");
-        return companyDao.getForFragmentName("%" + name + "%");
+        throw new NameFindProcessingException(NameFindProcessingException.ERR_NOCOMPANY_ERROR);
     }
 
     public List<Employee> getForFirstName(String name) throws NameFindProcessingException {
-        if (employeeDao.getForFragmentName(name).size() == 0) {
-            throw new NameFindProcessingException(NameFindProcessingException.ERR_NOPERSON_ERROR);
+        if (employeeDao.getForFragmentName(name).size() != 0) {
+            LOGGER.info("employee found");
+            return employeeDao.getForFragmentName("%" + name + "%");
         }
-        LOGGER.info("employee found");
-        return employeeDao.getForFragmentName("%" + name + "%");
+        throw new NameFindProcessingException(NameFindProcessingException.ERR_NOPERSON_ERROR);
     }
 }
+
+//    public List<Employee> getForFirstName(String name) throws NameFindProcessingException {
+//        if (employeeDao.getForFragmentName(name).size() == 0) {
+//            throw new NameFindProcessingException(NameFindProcessingException.ERR_NOPERSON_ERROR);
+//        }
+//        LOGGER.info("employee found");
+//        return employeeDao.getForFragmentName("%" + name + "%");
+//    }
