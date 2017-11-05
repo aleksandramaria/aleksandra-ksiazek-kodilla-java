@@ -16,11 +16,11 @@ import java.util.List;
 @NamedQueries ({
         @NamedQuery(
                 name = "Company.retrieveCompanyName",
-                query = "FROM Company WHERE NAME LIKE 'DAT%'"
+                query = "FROM Company WHERE COMPANY_NAME LIKE 'DAT%'"
         ),
         @NamedQuery(
                 name = "Company.getForFragmentName",
-                query = "FROM Company WHERE NAME LIKE '%:ARG%'"
+                query = "FROM Company WHERE COMPANY_NAME LIKE '%:ARG%'"
         )
 })
 // "SELECT * FROM COMPANY WHERE NAME = 'DAT'"
