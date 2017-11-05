@@ -30,6 +30,7 @@ public class EmployeeFacadeTestSuite {
         //Then
         List<Company> achiCompanies = employeeFacade.getForName("achi");
         Assert.assertEquals(1, achiCompanies.size());
+        System.out.println("number of returns: " + achiCompanies.size());
     }
 
     @Test
@@ -49,5 +50,6 @@ public class EmployeeFacadeTestSuite {
         //Then
         List<Employee> linEmployees = employeeFacade.getForFirstName("lin");
         Assert.assertEquals(1, linEmployees.size());
+        System.out.println("number of returns: " + linEmployees.size());
     }
 }
