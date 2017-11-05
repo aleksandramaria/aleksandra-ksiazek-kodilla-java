@@ -5,7 +5,9 @@ import com.kodilla.patterns2.facade.api.OrderDto;
 import com.kodilla.patterns2.facade.api.OrderFacade;
 import com.kodilla.patterns2.facade.api.OrderProcessingException;
 import com.kodilla.patterns2.facade.employees.Company;
+import com.kodilla.patterns2.facade.employees.Employee;
 import com.kodilla.patterns2.facade.employees.EmployeeFacade;
+import com.kodilla.patterns2.facade.employees.NameFindProcessingException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -88,7 +90,25 @@ public class FacadeTestSuite {
     }
     @Test
     public void testEmployeeFacade() {
-        List<Company> achiCompanies = employeeFacade.getForName("achi");
-        Assert.assertEquals(3, achiCompanies.size());
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greyMatter = new Company("Grey Matter");
+        try {
+            employeeFacade.getForName("achi");
+        } catch (NameFindProcessingException e) {
+            //handling a problem
+        }
+
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+        try {
+            employeeFacade.getForFirstName("lin");
+        } catch (NameFindProcessingException e) {
+            //
+        }
+
+//        List<Company> achiCompanies = employeeFacade.getForName("achi");
+//        Assert.assertEquals(3, achiCompanies.size());
     }
 }

@@ -11,6 +11,11 @@ import java.util.List;
 //        resultClass = Company.class
 //)
 
+// "SELECT * FROM COMPANY WHERE NAME = 'DAT'"
+// "SELECT * FROM COMPANY WHERE NAME LIKE \"% DAT %\";",
+// "SELECT * FROM COMPANY WHERE NAME LIKE 'DAT%'"
+
+
 @NamedQueries({
         @NamedQuery(
                 name = "Company.retrieveCompanyName",
@@ -21,9 +26,6 @@ import java.util.List;
                 query = "FROM Company WHERE COMPANY_NAME LIKE :ARG"
         )
 })
-// "SELECT * FROM COMPANY WHERE NAME = 'DAT'"
-// "SELECT * FROM COMPANY WHERE NAME LIKE \"% DAT %\";",
-// "SELECT * FROM COMPANY WHERE NAME LIKE 'DAT%'"
 
 @Entity
 @Table(name = "COMPANIES")
