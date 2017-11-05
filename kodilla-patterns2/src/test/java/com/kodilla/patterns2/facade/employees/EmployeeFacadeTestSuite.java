@@ -1,7 +1,10 @@
 package com.kodilla.patterns2.facade.employees;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 /**
  * Created by ola on 05/11/2017.
@@ -20,7 +23,10 @@ public class EmployeeFacadeTestSuite {
         } catch (NameFindProcessingException e) {
             //handling a problem
         }
+    }
 
+    @Test
+    public void testEmployee() throws NameFindProcessingException {
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
@@ -29,8 +35,11 @@ public class EmployeeFacadeTestSuite {
         } catch (NameFindProcessingException e) {
             //
         }
-
-//        List<Company> achiCompanies = employeeFacade.getForName("achi");
-//        Assert.assertEquals(3, achiCompanies.size());
     }
 }
+
+//        //Then
+//        List<Company> achiCompanies = employeeFacade.getForFirstName("achi");
+//        Assert.assertEquals(1, achiCompanies.size());
+//    }
+//}

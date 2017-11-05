@@ -31,7 +31,7 @@ public class EmployeeFacade {
 
     public List<Employee> getForFirstName(String name) throws NameFindProcessingException {
         if (employeeDao.getForFragmentName(name).size() == 0) {
-            throw new NameFindProcessingException(NameFindProcessingException.ERR_NOCOMPANY_ERROR);
+            throw new NameFindProcessingException(NameFindProcessingException.ERR_NOPERSON_ERROR);
         }
         LOGGER.info("company found");
         return employeeDao.getForFragmentName("%" + name + "%");
