@@ -28,9 +28,6 @@ public class FacadeTestSuite {
     @Autowired
     private OrderFacade orderFacade;
 
-    @Autowired
-    private EmployeeFacade employeeFacade;
-
     @Test
     public void testShopServiceSubmitOrder() {
         long orderId = shopService.openOrder(1L);
@@ -87,28 +84,5 @@ public class FacadeTestSuite {
         } catch (OrderProcessingException e) {
             //business exception should be handled in real applications
         }
-    }
-    @Test
-    public void testEmployeeFacade() {
-        Company softwareMachine = new Company("Software Machine");
-        Company dataMaesters = new Company("Data Maesters");
-        Company greyMatter = new Company("Grey Matter");
-        try {
-            employeeFacade.getForName("achi");
-        } catch (NameFindProcessingException e) {
-            //handling a problem
-        }
-
-        Employee johnSmith = new Employee("John", "Smith");
-        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
-        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
-        try {
-            employeeFacade.getForFirstName("lin");
-        } catch (NameFindProcessingException e) {
-            //
-        }
-
-//        List<Company> achiCompanies = employeeFacade.getForName("achi");
-//        Assert.assertEquals(3, achiCompanies.size());
     }
 }
