@@ -18,8 +18,9 @@ import java.util.List;
 public class EmployeeFacadeTestSuite {
     @Autowired
     private EmployeeFacade employeeFacade;
-
+    @Autowired
     private CompanyDao companyDao;
+    @Autowired
     private EmployeeDao employeeDao;
 
     @Test
