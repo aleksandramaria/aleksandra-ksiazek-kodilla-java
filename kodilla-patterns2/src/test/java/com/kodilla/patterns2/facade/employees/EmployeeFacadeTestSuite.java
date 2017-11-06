@@ -1,5 +1,6 @@
 package com.kodilla.patterns2.facade.employees;
 
+import org.aspectj.lang.annotation.Aspect;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,7 +20,6 @@ public class EmployeeFacadeTestSuite {
     private EmployeeFacade employeeFacade;
 
     private CompanyDao companyDao;
-
     private EmployeeDao employeeDao;
 
     @Test
@@ -80,16 +80,28 @@ public class EmployeeFacadeTestSuite {
 
         //Then
         List<Employee> linEmployees = employeeFacade.getForFirstName("lin");
+        Assert.assertEquals(1, linEmployees.size());
         System.out.println("number of returns: " + linEmployees.size());
 
+        //CleanUp
         try {
-            Assert.assertEquals(1, linEmployees.size());
-        }
-        finally {
-            //CleanUp
             employeeDao.delete(johnSmithId);
             employeeDao.delete(stephanieClarcksonId);
             employeeDao.delete(lindaKovalskyId);
         }
+        finally {
+            //do nothing
+        }
     }
 }
+
+//        try {
+//                Assert.assertEquals(1, linEmployees.size());
+//                }
+//                finally {
+//                //CleanUp
+//                employeeDao.delete(johnSmithId);
+//                employeeDao.delete(stephanieClarcksonId);
+//                employeeDao.delete(lindaKovalskyId);
+//                }
+//                }
