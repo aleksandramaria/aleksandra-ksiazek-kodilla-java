@@ -70,7 +70,7 @@ public class CrudAppTestSuite {
                         .getText().equals(taskName))
 
                 .forEach(theForm -> {
-                    WebElement buttonDeleteTask = theForm.findElement(By.xpath(".//button[2]"));
+                    WebElement buttonDeleteTask = theForm.findElement(By.xpath(".//button[4]"));
                     buttonDeleteTask.click();
                 });
         Thread.sleep(2000);
