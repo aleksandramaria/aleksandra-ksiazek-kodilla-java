@@ -60,8 +60,8 @@ public class CrudAppTestSuite {
 
         while (!driver.findElement(By.xpath("//select[1]")).isDisplayed()) ;
 
-//        final String XPATH_DELETE_TASK = "//form[contains(@id, \"15\")]/div/fieldset/button[2]";
-
+//        final String XPATH_DELETE_TASK = "//html/body/main/section[2]/div/form[5]/div/fieldset[1]/button[4]";
+//
 //        WebElement deleteButton = driver.findElement(By.xpath(XPATH_DELETE_TASK));
 //        deleteButton.click();
 
@@ -71,7 +71,7 @@ public class CrudAppTestSuite {
 
                 .forEach(theForm -> {
                     WebElement buttonDeleteTask = theForm.findElement(By.xpath(".//button[2]"));
-                    buttonDeleteTask.click();                                             
+                    buttonDeleteTask.click();
                 });
         Thread.sleep(2000);
     }
@@ -96,21 +96,25 @@ public class CrudAppTestSuite {
 //                });
 //        Thread.sleep(5000);
 //    }
-
+//
 //    private boolean checkTaskExistsInTrello(String taskName) throws InterruptedException {
-//        final String TRELLO_URL = "https://trello.com.login/";
+//        final String XPATH_LOGIN_BUTTON = "/html/body/div[1]/div[2]/a[1]";
+//        final String TRELLO_URL = "https://trello.com/";
 //        boolean result = false;
 //        WebDriver driverTrello = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
 //        driverTrello.get(TRELLO_URL);
 //
-//        driverTrello.findElement(By.id("user")).sendKeys("aleksandraksiazek");
+//        WebElement loginButton = driverTrello.findElement(By.xpath(XPATH_LOGIN_BUTTON));
+//        loginButton.click();
+//
+//        driverTrello.findElement(By.id("user")).sendKeys("ola.ksi@gmail.com");
 //        driverTrello.findElement(By.id("password")).sendKeys("MartynaHinz1988");
 //        driverTrello.findElement(By.id("login")).submit();
 //
 //        Thread.sleep(2000);
 //
-//        driverTrello.findElements(By.xpath("//a[@class=\"board-title\"]")).stream()
-//                .filter(aHref -> aHref.findElements(By.xpath(".span[@title=\"Kodilla Board\"]")).size() > 0)
+//        driverTrello.findElements(By.xpath("//a[@class=\"board-tile\"]")).stream()
+//                .filter(aHref -> aHref.findElements(By.xpath(".//span[@title=\"Kodilla Application\"]")).size() > 0)
 //                .forEach(aHref -> aHref.click());
 //
 //        Thread.sleep(2000);
