@@ -16,7 +16,7 @@ public class OddNumbersExterminator {
         ArrayList<Integer> evenNumbers = new ArrayList();
 
         for (int n = 0; n < numbers.size(); n++) {
-            Integer temporaryValue = numbers.get(n);
+            int temporaryValue = numbers.get(n);
 
             if (temporaryValue % 2 == 0) {
                 evenNumbers.add(temporaryValue);
@@ -24,4 +24,5 @@ public class OddNumbersExterminator {
         } return evenNumbers;
 
     }
+
 }

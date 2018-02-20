@@ -21,17 +21,18 @@ public class LoggerTestSuite {
         //Given
         //When
         Logger.getInstance().log("last night");
-
-
+        String Log = Logger.getInstance().getLastLog();
+        System.out.println("Last log: " + Log);
         //Then
+        Assert.assertEquals("last night", Log);
     }
-    @Test
-    public void TestGetLastLog() {
-        //Given
-        //When
-        String lastLog = Logger.getInstance().getLastLog();
-        System.out.println("Last log: " + lastLog);
-        //Then
-        Assert.assertEquals("today", lastLog);
-    }
+//    @Test
+//    public void TestGetLastLog() {
+//        //Given
+//        //When
+//        String lastLog = Logger.getInstance().getLastLog();
+//        System.out.println("Last log: " + lastLog);
+//        //Then
+//        Assert.assertEquals("today", lastLog);
+//    }
 }

@@ -3,6 +3,7 @@ package com.kodilla.good.patterns.challenges;
 import java.util.stream.Collectors;
 
 public class MovieStoreTitles {
+
     public static void main(String[] args) {
         MovieStore movieStore = new MovieStore();
         String theResultStringOfTitles = movieStore.getMovies().entrySet().stream()

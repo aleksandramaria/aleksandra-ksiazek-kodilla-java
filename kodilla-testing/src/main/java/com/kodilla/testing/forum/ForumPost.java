@@ -4,12 +4,12 @@ package com.kodilla.testing.forum;
  * Created by ola on 17/07/2017.
  */
 public class ForumPost {
-    String postBody;
     String author;
+    String postBody;
 
-    public ForumPost(String postBody, String author) {
-        this.postBody = postBody;
+    public ForumPost(String author, String postBody) {
         this.author = author;
+        this.postBody = postBody;
     }
 
     public String getPostBody() {
@@ -36,5 +36,13 @@ public class ForumPost {
         int result = postBody.hashCode();
         result = 31 * result + author.hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "ForumPost{" +
+                "postBody='" + postBody + '\'' +
+                ", author='" + author + '\'' +
+                '}';
     }
 }

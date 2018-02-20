@@ -1,12 +1,12 @@
 package com.kodilla.patterns.builder.checkers;
 
 public class Board {
-    public final static int MIN_INDEX = 0;
+    public final static int MIN_INDEX = 1;
     public final static int MAX_INDEX = 9;
     Figure[][] board = new Figure[10][];
 
     public Board() {
-        for (int n = 0; n < 10; n++) {
+        for (int n = 1; n < 10; n++) {
             board[n] = new Figure[10];
         }
     }
@@ -25,7 +25,7 @@ public class Board {
             result += "|";
             for(int k = MIN_INDEX; k <= MAX_INDEX; k++) {
                 if(board[n][k] == null) {
-                    result += "  ";
+                    result += "__";
                 } else {
                     result += (board[n][k]).getColor().equals(Figure.BLACK) ? "b" : "w";
                     result += (board[n][k]) instanceof Pawn ? "P" : "Q";
