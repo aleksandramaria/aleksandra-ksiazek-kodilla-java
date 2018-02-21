@@ -34,10 +34,10 @@ public class ShapeCollectorTestSuiteTest {
         Circle circle = new Circle("circle", 4);
 
         //When
-        boolean figures = shapeCollector.addFigure(circle);
+        boolean figureAdded = shapeCollector.addFigure(circle);
 
         //Then
-        Assert.assertTrue(true);
+        Assert.assertTrue(figureAdded);
     }
 
     @Test
@@ -50,11 +50,28 @@ public class ShapeCollectorTestSuiteTest {
         shapeCollector.addFigure(square);
 
         //When
-        boolean figures = shapeCollector.removeFigure(circle);
+        boolean figureAdded = shapeCollector.removeFigure(circle);
+        String shapes = shapeCollector.showFigures();
 
         //Then
-        Assert.assertTrue(true);
-        //Assert.assertEquals( 1, shapeCollector.showFigures().size());
+        Assert.assertTrue(figureAdded);
+        Assert.assertEquals( "square", shapes);
+        System.out.println(shapes + " == square");
+    }
+    @Test
+    public void testShowFigures() {
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
+        Circle circle = new Circle("circle", 4);
+
+        shapeCollector.addFigure(circle);
+
+        //When
+        String shapes = shapeCollector.showFigures();
+
+        //Then
+        Assert.assertEquals("circle", shapes);
+        System.out.println(shapes);
     }
 
     @Test
@@ -70,20 +87,5 @@ public class ShapeCollectorTestSuiteTest {
 
         //Then
         Assert.assertEquals(circle, theCircle);
-    }
-
-    @Test
-    public void testShowFigures() {
-        //Given
-        ShapeCollector shapeCollector = new ShapeCollector();
-        Circle circle = new Circle("circle", 4);
-
-        shapeCollector.addFigure(circle);
-
-        //When
-        String shapes = shapeCollector.showFigures();
-
-        //Then
-        Assert.assertEquals("circle", shapes);
     }
 }

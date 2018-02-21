@@ -7,7 +7,7 @@ import java.util.List;
  * Created by ola on 19/07/2017.
  */
 public class ShapeCollector {
-    private ArrayList<Shape> figures = new ArrayList<Shape>();
+    private List<Shape> figures = new ArrayList<Shape>();
 
     public boolean addFigure(Shape shape) {
         return figures.add(shape);
