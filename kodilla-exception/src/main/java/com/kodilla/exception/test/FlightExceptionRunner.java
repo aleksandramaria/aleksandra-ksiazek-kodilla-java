@@ -1,13 +1,11 @@
 package com.kodilla.exception.test;
 
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class FlightExceptionRunner {
     public static void main(String[] args) {
         Flight chicago = new Flight("chicago");
         Flight sanFrancisco = new Flight("san francisco");
+        Flight warsaw = new Flight("warsaw");
 
         FlightConnection flightConnection = new FlightConnection();
 

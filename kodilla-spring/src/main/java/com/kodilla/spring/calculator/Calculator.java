@@ -5,9 +5,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Calculator {
-    private Display display;
 
     @Autowired
+    private Display display;
+
     public Calculator(Display display) {
         this.display = display;
     }

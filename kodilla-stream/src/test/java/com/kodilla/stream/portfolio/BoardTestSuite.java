@@ -10,6 +10,8 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 public class BoardTestSuite {
     public Board prepareTestData() {
         //users
@@ -70,6 +72,7 @@ public class BoardTestSuite {
         project.addTaskList(taskListToDo);
         project.addTaskList(taskListInProgress);
         project.addTaskList(taskListDone);
+
         return project;
     }
 
@@ -84,6 +87,42 @@ public class BoardTestSuite {
     }
 
     @Test
+    public void testAddTaskListFindOutdatedTasks() {
+        //Given
+        Board project = prepareTestData();
+
+        //When
+        List<Task> tasks = project.getTaskLists().stream()
+                .flatMap(tl -> tl.getTasks().stream())
+                .filter(t -> t.getDeadline().isBefore(LocalDate.now()))
+                .collect(toList());
+
+        //Then
+        Assert.assertEquals(1, tasks.size());
+        Assert.assertEquals("HQLs for analysis", tasks.get(0).getTitle());
+    }
+
+//    @Test
+//    public void testAddTaskListFindOutdatedTasks() {
+//        //Given
+//        Board project = prepareTestData();
+//
+//        //When
+//        List<TaskList> undoneTasks = new ArrayList<>();
+//        undoneTasks.add(new TaskList("To do"));
+//        undoneTasks.add(new TaskList("In progress"));
+//        List<Task> tasks = project.getTaskLists().stream()
+//                .filter(undoneTasks::contains)
+//                .flatMap(tl -> tl.getTasks().stream())
+//                .filter(t -> t.getDeadline().isBefore(LocalDate.now()))
+//                .collect(toList());
+//
+//        //Then
+//        Assert.assertEquals(1, tasks.size());
+//        Assert.assertEquals("HQLs for analysis", tasks.get(0).getTitle());
+//    }
+
+    @Test
     public void testAddTaskListFindLongTasks() {
         //Given
         Board project = prepareTestData();
@@ -91,6 +130,7 @@ public class BoardTestSuite {
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
+
         long longTasks = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())

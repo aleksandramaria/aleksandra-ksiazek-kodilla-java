@@ -12,6 +12,7 @@ public class OrderProcessor {
     public OrderItem process(OrderItem orderItem) {
         producer.process(orderItem.getProduct());
         orderItem.setSent(true);
+
         return orderItem;
     }
 }

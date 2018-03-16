@@ -12,8 +12,10 @@ public class WeatherForecastTestSuite {
 
         //When
         int quantityOfSensors = weatherForecast.calculateForecast().size();
+        double resultTemp = weatherForecast.calculateForecast().get(0);
 
         //Then
         Assert.assertEquals(5, quantityOfSensors);
+        System.out.println(resultTemp);
     }
 }

@@ -27,8 +27,9 @@ public class FirstChallenge {
             System.out.println("sorry cant divide by 0.");
 
         } finally {
-            System.out.println("...but hey it's all good");
+            System.out.println("...hey it's all good");
         }
 
     }
 }
+

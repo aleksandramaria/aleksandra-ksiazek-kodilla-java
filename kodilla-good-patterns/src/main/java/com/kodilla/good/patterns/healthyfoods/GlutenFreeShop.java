@@ -9,6 +9,7 @@ public class GlutenFreeShop implements Producer {
     public GlutenFreeShop(List<Product> products) {
         this.products = products;
     }
+
     @Override
     public void process(Product product) {
         System.out.println("Process GlutenFree for product: " + product.getProductName());

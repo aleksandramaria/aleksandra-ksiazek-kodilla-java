@@ -10,6 +10,7 @@ public class HealthyShop implements Producer {
     public HealthyShop(List<Product> products) {
         this.products = products;
     }
+
     @Override
     public void process(Product product) {
         System.out.println("Process HealthyShop for product: " + product.getProductName());
