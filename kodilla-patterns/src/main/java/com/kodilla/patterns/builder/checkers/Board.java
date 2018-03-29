@@ -3,7 +3,7 @@ package com.kodilla.patterns.builder.checkers;
 public class Board {
     public final static int MIN_INDEX = 1;
     public final static int MAX_INDEX = 9;
-    Figure[][] board = new Figure[10][];
+    Figure[][] board = new Figure[10][10];
 
     public Board() {
         for (int n = 1; n < 10; n++) {

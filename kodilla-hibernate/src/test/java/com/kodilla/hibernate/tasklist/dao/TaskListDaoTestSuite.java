@@ -92,19 +92,24 @@ public class TaskListDaoTestSuite {
         task3.setTaskFinancialDetails(tfd3);
         task4.setTaskFinancialDetails(tfd4);
 
-        TaskList taskList = new TaskList(LISTNAME, "ToDo tasks");
-        taskList.getTasks().add(task1);
-        taskList.getTasks().add(task2);
-        taskList.getTasks().add(task3);
-        taskList.getTasks().add(task4);
+//        TaskList taskList = new TaskList(LISTNAME, "ToDo tasks");
+//        taskList.getTasks().add(task1);
+//        taskList.getTasks().add(task2);
+//        taskList.getTasks().add(task3);
+//        taskList.getTasks().add(task4);
+//
+//        task1.setTaskList(taskList);
+//        task2.setTaskList(taskList);
+//        task3.setTaskList(taskList);
+//        task4.setTaskList(taskList);
+//
+//        taskListDao.save(taskList);
+//        int id = taskList.getId();
 
-        task1.setTaskList(taskList);
-        task2.setTaskList(taskList);
-        task3.setTaskList(taskList);
-        task4.setTaskList(taskList);
-
-        taskListDao.save(taskList);
-        int id = taskList.getId();
+        taskDao.save(task1);
+        taskDao.save(task2);
+        taskDao.save(task3);
+        taskDao.save(task4);
 
         //When
         List<Task> longTasks = taskDao.retrieveLongTasks();
@@ -113,14 +118,14 @@ public class TaskListDaoTestSuite {
         List<Task> durationLongerThanTasks = taskDao.retrieveTasksWithDurationLongerThan(6);
 
         //Then
-        try {
+//        try {
             Assert.assertEquals(1, longTasks.size());
             Assert.assertEquals(3, shortTasks.size());
             Assert.assertEquals(3, enoughTimeTasks.size());
             Assert.assertEquals(2, durationLongerThanTasks.size());
-        } finally {
-            //CleanUp
-            taskListDao.delete(id);
-        }
+//        } finally {
+//            //CleanUp
+//            taskListDao.delete(id);
+//        }
     }
 }

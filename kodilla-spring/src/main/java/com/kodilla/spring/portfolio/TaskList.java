@@ -9,8 +9,9 @@ import java.util.List;
 
 public class TaskList {
     List<String> tasks;
+    String name;
 
-    public TaskList() {
+    public TaskList(String name) {
         tasks = new ArrayList<>();
     }
 

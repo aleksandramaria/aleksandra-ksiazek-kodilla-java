@@ -21,6 +21,7 @@ public class BoardTestSuite {
 
         //When
         board.toDoList.tasks.add("extra task1");
+        board.toDoList.tasks.add("extra new task");
         board.inProgressList.tasks.add("extra task2");
         board.doneList.tasks.add("extra task3");
 

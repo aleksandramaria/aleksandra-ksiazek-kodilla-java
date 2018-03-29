@@ -13,11 +13,12 @@ public class PizzaTestSuite {
                 .sauce("Spicy")
                 .ingredient("Ham")
                 .ingredient("Mushrooms")
+                .ingredient("Sweetcorn")
                 .build();
         System.out.println(pizza);
         //When
         int howManyIngredients = pizza.getIngredients().size();
         //Then
-        Assert.assertEquals(3, howManyIngredients);
+        Assert.assertEquals(4, howManyIngredients);
     }
 }
